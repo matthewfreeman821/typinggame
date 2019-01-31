@@ -43,5 +43,14 @@ const words = [
 
 //Initialize the game
 function init() {
-  console.log('init');
+  //Load word from words
+  showWord(words);
+}
+
+//Pick and Show random word
+function showWord(arr) {
+  //Generate random array index
+  const randIndex = Math.floor(Math.random() * arr.length);
+  //output random word
+  currentWord.innerHTML = arr[randIndex];
 }
