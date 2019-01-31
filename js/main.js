@@ -1,3 +1,5 @@
+window.addEventListener('load', init);
+
 //Global variables
 let time = 5;
 let score = 0;
@@ -37,4 +39,9 @@ const words = [
   'master',
   'space',
   'definition'
-]
+];
+
+//Initialize the game
+function init() {
+  console.log('init');
+}
