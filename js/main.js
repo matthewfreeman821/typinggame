@@ -26,7 +26,7 @@ const words = [
   'developer',
   'establishment',
   'hero',
-  'javascipt',
+  'javascript',
   'nutrition',
   'revolver',
   'echo',
@@ -62,8 +62,13 @@ function startMatch() {
     wordInput.value = '';
     score++;
   }
-
-  scoreDisplay.innerHTML = score;
+  
+  //if score is -1, display 0
+  if (score === -1) {
+    scoreDisplay.innerHTML = 0;
+  } else {
+    scoreDisplay.innerHTML = score;
+  }
 }
 
 //match currentWord to wordInput
@@ -103,6 +108,7 @@ function countdown() {
 //check game status
 function checkStatus() {
   if (!isPlaying && time === 0) {
-    message.innerHTML = 'Game Over!!!'
+    message.innerHTML = 'Game Over!!!';
+    score = -1;
   }
 }
