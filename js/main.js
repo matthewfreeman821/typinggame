@@ -54,6 +54,8 @@ const words = [
 
 //Initialize the game
 function init() {
+  //Show number of seconds
+  seconds.innerHTML = currentLevel;
   //Load word from words
   showWord(words);
   //Start matching on typing
