@@ -45,10 +45,36 @@ const words = [
 function init() {
   //Load word from words
   showWord(words);
+  //Start matching on typing
+  wordInput.addEventListener('input', startMatch);
   //Call countdown every second
   setInterval(countdown, 1000);
   //Check game status
   setInterval(checkStatus, 50);
+}
+
+//Start matching
+function startMatch() {
+  if (matchWords()) {
+    isPlaying = true;
+    time = 6;
+    showWord(words);
+    wordInput.value = '';
+    score++;
+  }
+
+  scoreDisplay.innerHTML = score;
+}
+
+//match currentWord to wordInput
+function matchWords() {
+  if (wordInput.value === currentWord.innerHTML) {
+    message.innerHTML = 'Correct!!!';
+    return true;
+  } else {
+    message.innerHTML = '';
+    return false;
+  }
 }
 
 //Pick and Show random word
